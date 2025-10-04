@@ -33,6 +33,11 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.androidx.paging.common)
         }
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutines.test)
+        }
     }
 }
 
