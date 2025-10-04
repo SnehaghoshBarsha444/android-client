@@ -395,6 +395,30 @@ private fun MifosClientDetailsScreen(
                 value = it,
             )
         }
+
+        // New fields added
+        client?.gender?.let {
+            MifosClientDetailsText(
+                icon = MifosIcons.Person, // Replace with a more suitable icon if available
+                field = "Gender", // Replace with a string resource e.g., stringResource(Res.string.gender)
+                value = it,
+            )
+        }
+        client?.clientType?.let {
+            MifosClientDetailsText(
+                icon = MifosIcons.Info, // Replace with a more suitable icon if available
+                field = "Client Type", // Replace with a string resource
+                value = it,
+            )
+        }
+        client?.clientClassification?.let {
+            MifosClientDetailsText(
+                icon = MifosIcons.Info, // Replace with a more suitable icon if available
+                field = "Client Classification", // Replace with a string resource
+                value = it,
+            )
+        }
+
         client?.let { Utils.getStringOfDate(it.activationDate) }?.let {
             MifosClientDetailsText(
                 icon = MifosIcons.DateRange,
