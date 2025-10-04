@@ -421,7 +421,7 @@ private fun UpdateClientDetailsContent(
                         updateClient,
                         isActive,
                         staffInOffices,
-                        selectedClientId = selectedClientTypeId,
+                        selectedClientTypeId = selectedClientTypeId,
                         selectedClientClassificationId,
                         genderId,
                         selectedStaffId,
@@ -919,7 +919,7 @@ private fun handleSubmitClick(
     updateClient: (clientPayload: ClientPayloadEntity) -> Unit,
     isActive: Boolean,
     staffInOffices: List<StaffEntity>,
-    selectedClientId: Int,
+    selectedClientTypeId: Int,
     selectedClientClassificationId: Int,
     genderId: Int,
     selectedStaffId: Int?,
@@ -962,7 +962,7 @@ private fun handleSubmitClick(
         clientTemplate,
         genderId,
         selectedStaffId,
-        selectedClientId,
+        selectedClientTypeId,
         selectedClientClassificationId,
         selectedLegalFormId,
     )
@@ -986,7 +986,7 @@ private fun createClientPayload(
     clientTemplate: ClientsTemplateEntity,
     genderId: Int,
     selectedStaffId: Int?,
-    selectedClientId: Int,
+    selectedClientTypeId: Int,
     selectedClientClassificationId: Int,
     legalFormId: Int?,
 ): ClientPayloadEntity {
@@ -1025,7 +1025,7 @@ private fun createClientPayload(
         clientPayload = clientPayload.copy(staffId = selectedStaffId)
     }
     if (clientTemplate.clientTypeOptions?.isNotEmpty() == true) {
-        clientPayload = clientPayload.copy(clientTypeId = selectedClientId)
+        clientPayload = clientPayload.copy(clientTypeId = selectedClientTypeId)
     }
     if (clientTemplate.clientClassificationOptions?.isNotEmpty() == true) {
         clientPayload = clientPayload.copy(clientClassificationId = selectedClientClassificationId)
