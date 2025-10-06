@@ -734,7 +734,7 @@ private fun handleSubmitClick(
     staffInOffices: List<StaffEntity>,
     hasDatatables: Boolean,
     selectedOfficeId: Int?,
-    selectedClientId: Int,
+    selectedClientTypeId: Int,
     selectedClientClassificationId: Int,
     genderId: Int,
     selectedStaffId: Int?,
@@ -779,7 +779,7 @@ private fun handleSubmitClick(
         clientTemplate,
         genderId,
         selectedStaffId,
-        selectedClientId,
+        selectedClientTypeId,
         selectedClientClassificationId,
         isAddressEnabled,
         isAddressActive,
@@ -820,7 +820,7 @@ private fun createClientPayload(
     clientTemplate: ClientsTemplateEntity,
     genderId: Int,
     selectedStaffId: Int?,
-    selectedClientId: Int,
+    selectedClientTypeId: Int,
     selectedClientClassificationId: Int,
     isAddressEnabled: Boolean,
     isAddressActive: Boolean,
@@ -882,7 +882,7 @@ private fun createClientPayload(
         clientPayload = clientPayload.copy(staffId = selectedStaffId)
     }
     if (clientTemplate.clientTypeOptions?.isNotEmpty() == true) {
-        clientPayload = clientPayload.copy(clientTypeId = selectedClientId)
+        clientPayload = clientPayload.copy(clientTypeId = selectedClientTypeId)
     }
     if (clientTemplate.clientClassificationOptions?.isNotEmpty() == true) {
         clientPayload = clientPayload.copy(clientClassificationId = selectedClientClassificationId)

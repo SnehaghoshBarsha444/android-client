@@ -42,6 +42,11 @@ object ClientMapper : AbstractMapper<GetClientsPageItemsResponse, ClientEntity>(
                 value = entity.legalForm?.value,
             ),
             dateOfBirth = entity.dateOfBirth ?: emptyList(),
+            
+            // Mapping for new fields added
+            gender = entity.gender,
+            clientType = entity.clientType,
+            clientClassification = entity.clientClassification
         )
     }
 
@@ -67,6 +72,11 @@ object ClientMapper : AbstractMapper<GetClientsPageItemsResponse, ClientEntity>(
                 value = domainModel.legalForm?.value,
             ),
             dateOfBirth = domainModel.dateOfBirth,
+
+            // Reverse mapping for new fields added
+            gender = domainModel.gender,
+            clientType = domainModel.clientType,
+            clientClassification = domainModel.clientClassification
         )
     }
 }

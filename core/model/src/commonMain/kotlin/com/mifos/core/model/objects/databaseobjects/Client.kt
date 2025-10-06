@@ -25,4 +25,10 @@ data class Client(
     var mifosGroup: MifosGroup? = null,
 
     val loans: List<Loan> = ArrayList(),
+
+    // New fields added
+    var gender: String? = null,
+    var clientType: String? = null,
+    var clientClassification: String? = null
+
 ) : Parcelable
